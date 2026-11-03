@@ -1,0 +1,30 @@
+GO GAS APK BUILD USING ONLY AN ANDROID PHONE
+
+This project includes a GitHub Actions workflow at .github/workflows/build-apk.yml.
+A computer is not required, but a GitHub account and internet connection are required.
+
+IMPORTANT: GitHub does not install this project directly. GitHub Actions builds the APK in the cloud.
+
+1. Open https://github.com in Chrome and sign in or create a free account.
+2. Create a NEW repository named go-gas-app. Choose Public or Private, then Create repository.
+3. Upload the PROJECT CONTENTS (not the outer GoGasShopManager folder) while preserving folders:
+   - settings.gradle
+   - build.gradle
+   - gradle.properties
+   - app folder (including src/main/...)
+   - .github/workflows/build-apk.yml
+   Android mobile browsers may not support uploading a whole folder tree. If folder upload is unavailable,
+   use GitHub's web editor to create the folders and files, or use a computer/helper to upload once.
+4. Commit the files to the main branch.
+5. Open the repository's Actions tab. Select "Build GO GAS APK" and tap "Run workflow" if it has not started automatically.
+6. Wait for the workflow to finish with a green check mark.
+7. Open the completed workflow run, scroll to Artifacts, and download GO-GAS-debug-APK.
+8. Extract the downloaded artifact ZIP. It contains app-debug.apk.
+9. Tap app-debug.apk on your phone and allow Chrome/Files to install unknown apps if Android asks.
+10. Install and open GO GAS. Allow location permission when prompted; turn on phone Location/GPS for delivery capture.
+
+The APK produced this way is a DEBUG APK for testing, not a Play Store release. Keep the same signing key
+if you later need updates; this workflow uses GitHub's standard debug signing.
+
+Data note: sales data is stored locally on the phone. Export/back up records regularly. Do not uninstall
+or clear app data before backing up.
